@@ -6,7 +6,7 @@ https://repl.it/@machac/cas-slovne-pole
 
 <html>
   <head>
-    <title>Čas slovně</title>
+    <title>Čas slovně </title>
     <meta charset="utf-8">
   </head>
   <body>
