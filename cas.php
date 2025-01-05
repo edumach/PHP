@@ -1,9 +1,3 @@
-<!--
-
-https://repl.it/@machac/cas-slovne-pole
-
--->
-
 <html>
   <head>
     <title>Čas slovně </title>
