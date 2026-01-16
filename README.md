@@ -83,7 +83,7 @@ Edituj soubor a přidej výpočet a výpis zbývajících dnů do konce roku:
 1.	Soubor musí mít příponu `.php`
 2.	Skripty se v souboru vkládají do tzv. "PHP ostrůvků" `<?php ... ?>`
 3.	Těch tam může být víc.
-4.	Příkaz echo podobně jak v bashi vypisuje text.
+4.	Příkaz `echo` podobně jak v bashi vypisuje text.
 5.	PHP proměnná začíná znakem `$` 
 6.	Stručně řečeno: **PHP generuje HTML kód**
 
