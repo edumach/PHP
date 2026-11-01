@@ -101,8 +101,8 @@ Ze základních typů má PHP ještě typ **float** (reálné číslo) a **boole
 | Typ             | Označení    | Příklad     | Rozsah              |
 |-----------------|-------------|-------------|---------------------|
 | Řetězec         | string      | `$a = "text"` | "neomezená"              |
-| Celé číslo      | int         | `$b = 42`     | 2 ∙ 10<sup>±18</sup>      |
-| Reálné číslo    | float, real | `$c = 3.14`   | 1.8 ∙ 10<sup>±308</sup>   |
+| Celé číslo      | int         | `$b = 42`     | 2 &times; 10<sup>±18</sup>      |
+| Reálné číslo    | float, real | `$c = 3.14`   | 1.8 &times; 10<sup>±308</sup>   |
 | Logická hodnota | boolean     | `$d = true`   | true = 1, false = 0 |
 
 Poznámka: v PHP je float a real totéž.
@@ -113,7 +113,7 @@ Poznámka: v PHP je float a real totéž.
 ## PRAXE
 
 
-⚠️ Klíčový požadavek: umět napsat znaky: `$ ~ # " ' < > { } [ ] ;`
+⚠️ Klíčový požadavek: umět napsat znaky `$ ~ # " ' < > { } [ ] ;`
 
 ### Adresář webu na serveru TuX
 
@@ -124,28 +124,23 @@ Poznámka: v PHP je float a real totéž.
 ```
 Webový server "čte" právě (a pouze) obsah tohoto adresáře – soubory a adresáře.
 
-Pokud bychom například uložili skript galerie.php do `~/www/cms/fotogalerie`, byl by skript dostupný na URL: 
+Pokud bychom například uložili skript `galerie.php` do `~/www/cms/fotogalerie`, byl by skript dostupný na URL: 
 
 ```
-https://tux.panska.cz/~10XPrijmeniJ/cms/fotogalerie/gelarie.php
-                              ~/www/cms/fotogalerie/gelarie.php
+https://tux.panska.cz/~10XPrijmeniJ/cms/fotogalerie/galarie.php
+                              ~/www/cms/fotogalerie/galarie.php
 ```
 
 ⚠️ Cesta v URL je tedy úplně stejná jako v adresářové struktuře na disku, jen začíná v adresáři `www`. To je pro webový server kořenový adresář (root). Toto si velmi důkladně zapamatujte!!! 
 
+---
+
 ### 💾 První cvičení
 Jednoduché cvičení, které však demonstruje, co znamená "skript na straně serveru". 
 
-V adresáři `~/www` vytvoř adresář `first` a v něm soubor `first.php`:
+V adresáři `~/www/php` je soubor  `prvni.php`:
 
-```
-$ cd ~/www
-$ mkdir first
-$ cd first
-$ nano first.php
-```
-
-a zapiš do něj tento kód:
+zapiš do něj tento kód:
 
 ```php
 <p>Toto vypsalo HTML</p>
@@ -155,11 +150,11 @@ a zapiš do něj tento kód:
 <p>Toto vypsalo HTML</p>
 ```
   
-Umístění skriptu `first.php` a URL bude: 
+Umístění skriptu `prvni.php` a URL bude: 
 
 ```
-                              ~/www/first/first.php
-https://tux.panska.cz/~10XPrijmeniJ/first/first.php
+                              ~/www/php/prvni.php
+https://tux.panska.cz/~10XPrijmeniJ/php/prvni.php
 ```
 
 Po načtení stránky se podívej na **zdrojový kód**, který server prohlížeči poslal. 
@@ -177,7 +172,44 @@ Edituj soubor a přidej výpočet a výpis zbývajících dnů do konce roku:
 ```
 
 
+## Vazba mezi PHP a HTML
+
+PHP generuje kód. Neslouží k jeho formátování. Ani to neumí. K tomu jsou HTML značky a CSS styly. Pro začátek minimálně
+
+```html
+<br>
+<p></p>
+<h1></h1>
+<h2></h2> 
+```
+
+Jinými slovy, příkaz
+
+```php
+echo("<h1>");
+```
+integruje po zpracování PHP překladačem do souboru 4 znaky `<h1>`. Tím jeho činnost končí. Vůbec se nestará, k čemu tam jsou, nebo zda je dále v kódu uzavírací značka. To je starost vás jako programátora. Například kód
+
+```php
+echo rand(1,10);
+```
+
+pošle po vyhodnocení jedno náhodné číslo v intervalu 1 až 10 včetně. 
+
+
+Úzká spolupráce PHP a HTML/CSS je naprosto nezbytná.
+
+```
+11. přikázání: Entrem neodřádkuješ!
+12. přikázání: Mezerníkem neodsuneš!
+13. přikázání: PHP HTML značky nekontroluje!
+```
+
+---
+
+
 ☝️ Co si pamatovat
+
 1.	Soubor musí mít příponu `.php`
 2.	Skripty se v souboru vkládají do tzv. "PHP ostrůvků" `<?php ... ?>`
 3.	Těch tam může být víc.
@@ -185,25 +217,6 @@ Edituj soubor a přidej výpočet a výpis zbývajících dnů do konce roku:
 5.	PHP proměnná začíná znakem `$` 
 6.	Stručně řečeno: **PHP generuje HTML kód**
 
-## `index`
-
-Zapisovat vždy do URL název souboru není praktické:
-
-```
-https://tux.panska.cz/~10XPrijmeniJ/first/first.php
-```
-
-Výhodnější je pojmenovat výchozí soubor `index`. Apache jej pošle automaticky. Pak stačí do URL zapsat jen cestu ke složce:
-```
-https://tux.panska.cz/~10XPrijmeniJ/first/
-```
-
-Uprav název a vyzkoušej:
-
-```
-$ cd ~/www/first
-$ mv first.php index.php
-```
 
 
 
