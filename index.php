@@ -21,7 +21,8 @@ $menu = [
     ["rovnice/index.php", "Rovnice"],
     ["mobil.php", "Mobil"],
     ["dpc/index.php", "DPČ"],
-    ["pole/mesice.php", "Měsíce"]
+    ["pole/mesice.php", "Měsíce"],
+    ["relace/kostka_s_pameti.php", "Kostka s pamětí"]
 
 ];
 
