@@ -14,22 +14,23 @@
 <?php
 // 2D pole
 $menu = [
-    ["prvni.php", "První"],
-    ["kostky.php", "Kostky"],
-    ["karty.php", "Karty"],
-    ["eshop/index.php", "E-shop"],
-    ["rovnice/index.php", "Rovnice"],
-    ["mobil.php", "Mobil"],
-    ["dpc/index.php", "DPČ"],
-    ["pole/mesice.php", "Měsíce"],
-    ["relace/kostka_s_pameti.php", "Kostka s pamětí"]
+    ["prvni.php", "První", "Použití příkazu echo"],
+    ["kostky.php", "Kostky", "Náhodné hodnoty, obrázky"],
+    ["karty.php", "Karty", "Náhodné hodnoty, obrázky"],
+    ["eshop/index.php", "E-shop", "Formuláře, větvení"],
+    ["rovnice/index.php", "Rovnice", "Formuláře, výpočty"],
+    ["mobil.php", "Mobil", "Formuláře, větvení"],
+    ["dpc/index.php", "DPČ", "Formuláře, větvení"],
+    ["pole/mesice.php", "Měsíce", "Pole"],
+    ["relace/jmeno_nacti.php", "Jméno", "Relace"],
+    ["relace/kostka_s_pameti.php", "Kostka s pamětí", "Relace"]
 
 ];
 
 echo "<ol>";
 
 foreach ($menu as $polozka) {
-    echo "<li><a href='" . $polozka[0] . "'>" . $polozka[1] . "</a></li>";
+    echo "<li><a href='" . $polozka[0] . "'>" . $polozka[1] . " target=\"_blank\" </a> - ". $polozka[2] . "</li>";
 }
 
 echo "</ol>";
