@@ -6,6 +6,15 @@ Po načtení stránky se:
 - vypočítá se součet bodů,
 - tlačítko „Házet znovu“ načte stránku znovu (nový hod).
 Ukázka: https://php.edumach.cz/kostky.php
+
+Rozšíření 1 (DOUBLE):
+  Pokud padnou stejná čísla (např. 3 a 3), 
+  pod součtem se zobrazí text DOUBLE,
+  text bude červený (pomocí CSS).
+
+Rozšíření 2 (VELKÝ HOD):
+  Pokud je součet 10 a víc, vypíše se zeleně text "VELKÝ HOD".
+  Technicky jde o přidání vhodné podmínky a CSS stylu.
 */
 ?>
 
